@@ -61,7 +61,7 @@ function Home() {
               Your One-Stop Center for <span className="text-gold-shimmer">Specialized</span> Oil & Gas Upstream Services
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
-              Totally Committed to Excellent Delivery. An indigenous Nigerian service company forming international partnerships to deliver best-in-class upstream solutions.
+              Totally Committed to Excellent Delivery. An indigenous Nigerian service company leveraging international partnerships to deliver best-in-class upstream solutions.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Link to="/services" className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-gold text-navy-deep font-semibold shadow-gold hover:scale-105 transition-transform">
