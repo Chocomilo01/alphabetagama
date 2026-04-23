@@ -60,6 +60,7 @@ export const SERVICES: Service[] = [
     sections: [
       {
         heading: "Drill Bits: PDC & Roller Cones",
+        image: [drillBits],
         body: "We are PDC & Roller Cones representative in Nigeria and the Sub-Sahara Africa market for Drill Bits, Drilling Optimization Tools and Reamers. Our partners have combined industry experience of over 30 years for design, manufacture and technical support.",
         bullets: [
           { t: "PDC Drill Bits", d: "Steel & Matrix Body" },
@@ -71,12 +72,12 @@ export const SERVICES: Service[] = [
       
       {
         heading: "Drilling Optimization",
-        image: [drillBits],
+        image: [],
         body: "Our range of Drilling Optimization Tools includes vibration and shock mitigation tools that improve drilling efficiency and reduce non-productive time.",
       },
       {
         heading: "PDC Bits Repair Services",
-        image: [pdcBit,welding, repair1, repairlil],
+        image: [welding, repair1, repairlil],
         body: "We offer PDC bits repairs at pocket-friendly costs, extending the life of your drilling tools and reducing operational expenses.",
         bullets: [
           { t: "Cutter Turning", d: "Damaged PDC Cutters" },
