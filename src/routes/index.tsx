@@ -8,10 +8,16 @@ import offshore from "@/assets/offshore-platform.png";
 import refinery from "@/assets/refinery-aerial.jpeg";
 import drillBits from "@/assets/drill-bits-gold.png";
 import downhole from "@/assets/downhole-tools.png";
+import mill from "@/assets/xpressdrill-mill.png.webp";
+import machine1 from "@/assets/machine1.jpeg";
+import xpress from "@/assets/xpresscat.webp";
+import hookup from "@/assets/xpressdrill-hookup.png.webp";
 import centralizers from "@/assets/centralizers.png";
 import chemicals from "@/assets/chemicals.jpeg";
 import octg from "@/assets/octg-pipes.png";
 import welding from "@/assets/welding.png";
+import consultant from "@/assets/consultancy.jpg";
+import engine from "@/assets/engineers.jpg";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -25,11 +31,11 @@ export const Route = createFileRoute("/")({
 
 const services = [
   { icon: Drill, title: "Drill Bits & Optimization", desc: "PDC, Roller Cone, Bi-Center Bits, Staged Hole Openers, vibration & shock mitigation tools.", img: drillBits, tag: "OEM Rep" },
-  { icon: Anchor, title: "Fishing & Whipstock", desc: "Sole representative of Wildcat Oil Tools' XpressDrill™ Wellbore Departure System in Nigeria.", img: downhole, tag: "Sole Rep" },
+  { icon: Anchor, title: "Fishing & Whipstock", desc: "Sole representative of Wildcat Oil Tools' XpressDrill™ Wellbore Departure System in Nigeria.", img: xpress, tag: "Sole Rep" },
   { icon: Layers, title: "Cementing & Casing", desc: "Centralizers, float equipment, bridge plugs, stage cementing tools, liner hangers, reamer shoes.", img: centralizers, tag: "Accessories" },
   { icon: FlaskConical, title: "Drilling & Production Chemicals", desc: "Environmental-friendly emulsifiers, corrosion & shale inhibitors, lubricants — without compromising quality.", img: chemicals, tag: "Eco-Friendly" },
-  { icon: Cog, title: "OCTG & Machine Shop", desc: "API threading, flanges, cold cutting, PDC bit cutter replacement and re-brazing.", img: octg, tag: "Precision" },
-  { icon: Briefcase, title: "Consultancy & Supply", desc: "Directional drilling, mud engineering, drilling optimization and material supply by expert crews.", img: welding, tag: "Expertise" },
+  { icon: Cog, title: "OCTG & Machine Shop", desc: "API threading, flanges, cold cutting, PDC bit cutter replacement and re-brazing.", img: machine1, tag: "Precision" },
+  { icon: Briefcase, title: "Consultancy & Supply", desc: "Directional drilling, mud engineering, drilling optimization and material supply by expert crews.", img: consultant, tag: "Expertise" },
 ];
 
 const stats = [
@@ -208,7 +214,7 @@ function Home() {
               { t: "International Partnerships", d: "Strategic alliances with world-class manufacturers across Drill Bits, Cementing, and Whipstock systems." },
               { t: "Sole XpressDrill™ Rep", d: "Exclusive Nigerian representative of Wildcat Oil Tools' Wellbore Departure System." },
               { t: "Expert Field Engineers", d: "In-country team with international training — best hands for fishing, whipstock, and remedial services." },
-              { t: "Pocket-Friendly Quality", d: "We deliver world-class technology at competitive pricing without compromising safety or standards." },
+              { t: "Competitive Solutions", d: "We deliver world-class technology at competitive pricing without compromising safety or standards." },
             ].map((item, i) => (
               <motion.div key={item.t} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i*0.1 }} className="relative p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:border-gold/40 transition-all group">
                 <div className="absolute -top-4 left-6 h-10 w-10 rounded-xl bg-gradient-gold flex items-center justify-center text-navy-deep font-serif font-bold group-hover:animate-soft-bounce">

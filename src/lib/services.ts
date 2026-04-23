@@ -2,18 +2,26 @@ import { Drill, Anchor, Layers, FlaskConical, Cog, Briefcase, type LucideIcon } 
 import drillBits from "@/assets/drill-bits-gold.png";
 import pdcBit from "@/assets/pdc-bit.png";
 import downhole from "@/assets/downhole-tools.png";
+import mill from "@/assets/xpressdrill-mill.png.webp";
+import hookup from "@/assets/xpressdrill-hookup.png.webp";
 import whipstock from "@/assets/whipstock.png";
+import machine1 from "@/assets/machine1.jpeg";
+import repair from "@/assets/repair1.png";
+import repair1 from "@/assets/repair.jpeg";
 import centralizers from "@/assets/centralizers.png";
 import floatEq from "@/assets/float-equipment.png";
 import chemicals from "@/assets/chemicals.jpeg";
+import xpress from "@/assets/xpresscat.webp";
+import repairlil from "@/assets/repairlil.jpeg";
 import octg from "@/assets/octg-pipes.png";
 import welding from "@/assets/welding.png";
 import wildcatLogo from "@/assets/wildcat-logo.jpg";
 import xpressLogo from "@/assets/xpressdrill-logo.jpg";
 import xpressAssembly from "@/assets/xpressdrill-assembly.jpg";
 import xpressComponents from "@/assets/xpressdrill-components.jpg";
-
-export type ServiceSection = { heading: string; body: string; bullets?: { t: string; d: string }[] };
+import engineers from "@/assets/engineers.jpg";
+import consultancy from "@/assets/consultancy.jpg";
+export type ServiceSection = { heading: string; body: string; image?: string[]; bullets?:  { t: string; d: string }[] };
 export type SpecTable = { title: string; rows: { k: string; v: string }[] };
 export type SpecSheet = {
   title: string;
@@ -24,6 +32,7 @@ export type SpecSheet = {
   diagramAlt?: string;
   tables: SpecTable[];
   footer?: string;
+ 
 };
 export type Service = {
   slug: string;
@@ -44,14 +53,14 @@ export const SERVICES: Service[] = [
     productLine: "Drilling Tools",
     title: "Drill Bits, Drilling Optimization Tools & Reamers",
     short: "PDC Bits, Roller Cone Bits, Bi-Center Bits, Staged Hole Openers.",
-    cover: drillBits,
-    gallery: [drillBits, pdcBit],
+    cover: pdcBit,
+    gallery: [],
     icon: Drill,
     tag: "OEM Rep",
     sections: [
       {
-        heading: "OEM Representation",
-        body: "We are OEM representative in Nigeria and the Sub-Sahara Africa market for Drill Bits, Drilling Optimization Tools and Reamers. Our partners have combined industry experience of over 30 years for design, manufacture and technical support.",
+        heading: "Drill Bits: PDC & Roller Cones",
+        body: "We are PDC & Roller Cones representative in Nigeria and the Sub-Sahara Africa market for Drill Bits, Drilling Optimization Tools and Reamers. Our partners have combined industry experience of over 30 years for design, manufacture and technical support.",
         bullets: [
           { t: "PDC Drill Bits", d: "Steel & Matrix Body" },
           { t: "Roller Cone Bits", d: "Milled Tooth & TCI" },
@@ -59,39 +68,39 @@ export const SERVICES: Service[] = [
           { t: "Staged Hole Openers", d: "Hole Enlargement" },
         ],
       },
+      
       {
         heading: "Drilling Optimization",
+        image: [drillBits],
         body: "Our range of Drilling Optimization Tools includes vibration and shock mitigation tools that improve drilling efficiency and reduce non-productive time.",
-        bullets: [
-          { t: "Runners", d: "Vibration mitigation" },
-          { t: "Drivers", d: "Shock absorption" },
-          { t: "Extremers", d: "Extreme condition tools" },
-          { t: "Custom Made Reamers", d: "Tailored to your specifications" },
-        ],
       },
       {
         heading: "PDC Bits Repair Services",
+        image: [pdcBit,welding, repair1, repairlil],
         body: "We offer PDC bits repairs at pocket-friendly costs, extending the life of your drilling tools and reducing operational expenses.",
         bullets: [
           { t: "Cutter Turning", d: "Damaged PDC Cutters" },
           { t: "Re-brazing", d: "Thread Repairs" },
           { t: "Full PDC Bit Refurbishment", d: "End-to-end restoration" },
-        ],
+
+        ]
       },
     ],
+    
   },
   {
     slug: "fishing-whipstock",
     productLine: "Fishing & Whipstock",
     title: "Fishing Operations & Whipstock Services",
     short: "Comprehensive remedial services. Sole representative of Wildcat Oil Tools' XpressDrill in Nigeria.",
-    cover: whipstock,
-    gallery: [downhole, whipstock, xpressAssembly, xpressComponents],
+    cover: xpress,
+    gallery: [hookup,octg, mill],
     icon: Anchor,
     tag: "Sole Rep",
     sections: [
       {
         heading: "Comprehensive Remedial Services",
+        image: [],
         body: "Together with our Offshore Technical Partners, who are world-class renowned manufacturers of Whipstocks, Mills (Tri-mills and Bi-Mills), Anchors and Packer Assembly, we carry out all forms of remedial services.",
         bullets: [
           { t: "Fishing Operations", d: "Lost equipment recovery" },
@@ -178,7 +187,7 @@ export const SERVICES: Service[] = [
     title: "Cementing & Casing Accessories",
     short: "Centralizers, Float Equipment, Bridge Plugs, Stage Cementing Tools, Liner Hangers, Reamer Shoes.",
     cover: centralizers,
-    gallery: [centralizers, floatEq],
+    gallery: [downhole, centralizers, floatEq],
     icon: Layers,
     tag: "Accessories",
     sections: [
@@ -256,8 +265,8 @@ export const SERVICES: Service[] = [
     productLine: "OCTG & Machine Shop",
     title: "OCTG/Pipes & Machine Shop Services",
     short: "API Threading, Flanges, Cold Cutting, PDC bit cutter replacement & re-brazing.",
-    cover: octg,
-    gallery: [octg, welding],
+    cover: machine1,
+    gallery: [machine1],
     icon: Cog,
     tag: "Precision",
     sections: [
@@ -282,8 +291,8 @@ export const SERVICES: Service[] = [
     productLine: "Consultancy & Supply",
     title: "Consultancy Services & Materials Supply",
     short: "Directional Drilling, Mud Engineering, Drilling Optimization, Material Supply.",
-    cover: welding,
-    gallery: [welding],
+    cover: consultancy,
+    gallery: [consultancy, engineers],
     icon: Briefcase,
     tag: "Expertise",
     sections: [
