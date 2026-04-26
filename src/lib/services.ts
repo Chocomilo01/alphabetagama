@@ -1,5 +1,7 @@
 import { Drill, Anchor, Layers, FlaskConical, Cog, Briefcase, type LucideIcon } from "lucide-react";
 import drillBits from "@/assets/drill-bits-gold.png";
+import drillb from "@/assets/drill-bits.webp";
+import drillbits1 from "@/assets/drillbits-1.jpg";
 import pdcBit from "@/assets/pdc-bit.png";
 import downhole from "@/assets/downhole-tools.png";
 import mill from "@/assets/xpressdrill-mill.png.webp";
@@ -21,7 +23,7 @@ import xpressAssembly from "@/assets/xpressdrill-assembly.jpg";
 import xpressComponents from "@/assets/xpressdrill-components.jpg";
 import engineers from "@/assets/engineers.jpg";
 import consultancy from "@/assets/consultancy.jpg";
-export type ServiceSection = { heading: string; body: string; image?: string[]; bullets?:  { t: string; d: string }[] };
+export type ServiceSection = { heading: string; body: string; subText?: string; image?: string[]; bullets?:  { t: string; d: string }[] };
 export type SpecTable = { title: string; rows: { k: string; v: string }[] };
 export type SpecSheet = {
   title: string;
@@ -60,7 +62,7 @@ export const SERVICES: Service[] = [
     sections: [
       {
         heading: "Drill Bits: PDC & Roller Cones",
-        image: [drillBits],
+        image: [drillBits, drillbits1, drillb],
         body: "We are PDC & Roller Cones representative in Nigeria and the Sub-Sahara Africa market for Drill Bits, Drilling Optimization Tools and Reamers. Our partners have combined industry experience of over 30 years for design, manufacture and technical support.",
         bullets: [
           { t: "PDC Drill Bits", d: "Steel & Matrix Body" },
@@ -111,8 +113,11 @@ export const SERVICES: Service[] = [
         ],
       },
       {
-        heading: "Sole Representative — XpressDrill in Nigeria",
-        body: "E&R Global Resources Ltd is the Sole Representative of Wildcat Oil Tools' XpressDrill Wellbore Departure System in Nigeria. Developed by Wildcat Oil Tools, USA — established 2012, ISO 9001:2015 certified, with 500+ years combined industry experience.",
+        heading: "Sole Representative in Nigeria - Xpressdrill Technology Developed By Wildcat Oil Tools",
+        subText: "Available sizes - 13 3/8”, 9 5/8” and 7”",
+        body:
+          
+          "E&R Global Resources Ltd is the Sole Representative of Wildcat Oil Tools' XpressDrill Wellbore Departure System in Nigeria. Developed by Wildcat Oil Tools, USA — established 2012, ISO 9001:2015 certified, with 500+ years combined industry experience.",
         bullets: [
           { t: "True Single-Trip", d: "RIH, orient, set & mill" },
           { t: "Multi-Slip Anchor", d: "Enhanced wall contact" },

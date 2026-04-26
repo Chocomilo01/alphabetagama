@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { PageShell } from "@/components/site/PageShell";
-import { CheckCircle2, ArrowLeft, ArrowRight, Sparkles, Phone, Mail } from "lucide-react";
+import { CheckCircle2, ArrowLeft, ArrowRight, Phone, Mail } from "lucide-react";
 import { SERVICES, type Service, type ServiceSection } from "@/lib/services";
 import { CONTACT } from "@/lib/contact";
 
@@ -48,7 +48,7 @@ function ServiceDetail() {
               whileInView={{ opacity: 1, y: 0 }}
               className="grid lg:grid-cols-12 gap-8"
             >
-              {/* LEFT (RESTORED) */}
+              {/* LEFT */}
               <div className="lg:col-span-4">
                 <h2 className="text-2xl font-bold text-navy-deep">{sec.heading}</h2>
                 <div className="gold-divider mt-3 w-12" />
@@ -56,9 +56,15 @@ function ServiceDetail() {
 
               {/* RIGHT */}
               <div className="lg:col-span-8">
+                {sec.subText && (
+                  <p className="italic text-sm text-muted-foreground mb-2">
+                    {sec.subText}
+                  </p>
+                )}
+
                 <p className="text-muted-foreground">{sec.body}</p>
 
-                {/* MULTIPLE IMAGES */}
+                {/* IMAGES */}
                 {sec.image && (
                   <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {sec.image.map((img, i) => (
@@ -92,7 +98,7 @@ function ServiceDetail() {
         </div>
       </section>
 
-      {/* GALLERY (FIXED) */}
+      {/* GALLERY */}
       {service.gallery.length > 0 && (
         <section className="pb-20 px-6">
           <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -108,15 +114,18 @@ function ServiceDetail() {
         </section>
       )}
 
-      {/* FULL SPEC SHEET (THIS WAS YOUR BIGGEST ISSUE) */}
+      {/* SPEC SHEET — CLEAN VERSION (NO TABLES) */}
       {service.specSheet && (
         <section className="px-6 pb-20">
           <div className="max-w-6xl mx-auto bg-white rounded-3xl border shadow-lg overflow-hidden">
-            
+
             {/* HEADER */}
             <div className="bg-navy-deep text-white flex justify-between items-center p-6 border-b-4 border-gold">
               <div className="flex items-center gap-4">
-                <img src={service.specSheet.brandLogo} className="h-16 w-16 rounded-full bg-white p-1" />
+                <img
+                  src={service.specSheet.brandLogo}
+                  className="h-16 w-16 rounded-full bg-white p-1"
+                />
                 <div>
                   <div className="text-xs text-gold-soft uppercase">Sole Representative</div>
                   <div className="font-bold">Wildcat Oil Tools</div>
@@ -129,40 +138,19 @@ function ServiceDetail() {
             </div>
 
             {/* TITLE */}
-            <div className="p-6">
+            <div className="p-6 text-center">
               <h2 className="text-3xl font-bold text-navy-deep">
                 {service.specSheet.title}
               </h2>
-              <p className="mt-4 text-muted-foreground">
-                {service.specSheet.intro}
-              </p>
             </div>
 
-            {/* TABLES (YOU WERE MISSING THIS — THAT'S WHY CARD LOOKED "CUT") */}
-            <div className="p-6 grid md:grid-cols-2 gap-6">
-              {service.specSheet.tables.map((tbl) => (
-                <div key={tbl.title} className="border rounded-xl overflow-hidden">
-                  <div className="bg-navy-deep text-white p-2 font-semibold">
-                    {tbl.title}
-                  </div>
-                  <table className="w-full text-sm">
-                    <tbody>
-                      {tbl.rows.map((r) => (
-                        <tr key={r.k}>
-                          <td className="p-2 text-muted-foreground">{r.k}</td>
-                          <td className="p-2 text-right font-semibold">{r.v}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              ))}
-            </div>
-
-            {/* DIAGRAM */}
+            {/* ✅ ONLY DIAGRAM */}
             {service.specSheet.diagram && (
-              <div className="p-6">
-                <img src={service.specSheet.diagram} className="mx-auto max-w-sm" />
+              <div className="p-10 flex justify-center">
+                <img
+                  src={service.specSheet.diagram}
+                  className="max-w-2xl w-full object-contain"
+                />
               </div>
             )}
           </div>
@@ -176,18 +164,28 @@ function ServiceDetail() {
         </h2>
 
         <div className="mt-6 flex justify-center gap-4">
-          <a href={`tel:${CONTACT.phones[0].number}`} className="bg-gold px-6 py-3 rounded-full text-navy-deep font-bold">
+          <a
+            href={`tel:${CONTACT.phones[0].number}`}
+            className="bg-gold px-6 py-3 rounded-full text-navy-deep font-bold"
+          >
             <Phone className="inline mr-2" />
             {CONTACT.phones[0].display}
           </a>
 
-          <a href={`mailto:${CONTACT.emails[0]}`} className="border px-6 py-3 rounded-full">
+          <a
+            href={`mailto:${CONTACT.emails[0]}`}
+            className="border px-6 py-3 rounded-full"
+          >
             <Mail className="inline mr-2" />
             {CONTACT.emails[0]}
           </a>
         </div>
 
-        <Link to="/services/$slug" params={{ slug: next.slug }} className="block mt-8 text-gold">
+        <Link
+          to="/services/$slug"
+          params={{ slug: next.slug }}
+          className="block mt-8 text-gold"
+        >
           Next: {next.title} <ArrowRight className="inline" />
         </Link>
       </section>
