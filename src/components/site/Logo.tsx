@@ -8,7 +8,7 @@ export function Logo({ className = "" }: { className?: string }) {
         </div>
       </div>
       <div className="leading-tight">
-        <div className="font-serif font-bold text-[15px] tracking-tight text-foreground">E&R GLOBAL</div>
+        <div className="font-serif font-bold text-[15px] tracking-tight text-foreground"> GLOBAL</div>
         <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Resources Ltd</div>
       </div>
     </div>
