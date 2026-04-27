@@ -158,37 +158,39 @@ function ServiceDetail() {
       )}
 
       {/* CONTACT */}
-      <section className="py-20 px-6 text-center bg-gradient-hero text-white">
-        <h2 className="text-3xl font-bold">
-          Talk to us about {service.title.split(" ").slice(0, 3).join(" ")}
-        </h2>
+<section className="py-20 px-6 text-center bg-gradient-hero text-white">
+  <h2 className="text-3xl font-bold">
+    Talk to us about {service.title}
+  </h2>
 
-        <div className="mt-6 flex justify-center gap-4">
-          <a
-            href={`tel:${CONTACT.phones[0].number}`}
-            className="bg-gold px-6 py-3 rounded-full text-navy-deep font-bold"
-          >
-            <Phone className="inline mr-2" />
-            {CONTACT.phones[0].display}
-          </a>
+  <div className="mt-6 flex justify-center gap-4">
+    <a
+      href={`tel:${CONTACT.phones[0].number}`}
+      className="bg-gold px-6 py-3 rounded-full text-navy-deep font-bold"
+    >
+      <Phone className="inline mr-2" />
+      {CONTACT.phones[0].display}
+    </a>
 
-          <a
-            href={`mailto:${CONTACT.emails[0]}`}
-            className="border px-6 py-3 rounded-full"
-          >
-            <Mail className="inline mr-2" />
-            {CONTACT.emails[0]}
-          </a>
-        </div>
+    <a
+      href={`mailto:${CONTACT.emails[0]}`}
+      className="border px-6 py-3 rounded-full"
+    >
+      <Mail className="inline mr-2" />
+      {CONTACT.emails[0]}
+    </a>
+  </div>
 
-        <Link
-          to="/services/$slug"
-          params={{ slug: next.slug }}
-          className="block mt-8 text-gold"
-        >
-          Next: {next.title} <ArrowRight className="inline" />
-        </Link>
-      </section>
+  <Link
+    to="/services/$slug"
+    params={{ slug: next.slug }}
+    className="block mt-8 text-gold"
+  >
+    Next: {next.title} <ArrowRight className="inline" />
+  </Link>
+</section>
+
+        
     </PageShell>
   );
 }
