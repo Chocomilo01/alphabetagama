@@ -131,7 +131,7 @@ export const SERVICES: Service[] = [
       },
     ],
     specSheet: {
-      title: '9-5/8" Cased Hole Hydraulic System',
+      title: '',
       intro:
         "The XpressDrill™ wellbore departure system provides a reliable sidetrack across a wide variety of wellbore conditions and applications. Solid anchoring is achieved through the Extended Reach hydraulically set anchor. Bridge plugs, or other restrictions in the wellbore, are not required for successful operation. A 2.5-degree whipstock face ensures separation from the existing wellbore with minimal dogleg severity. The XpressMill™ milling assembly, dressed to full gauge with a combination of Premium PDC inserts and Tungsten Carbide, is designed to mill all casing grades and formations. Orientation can be achieved through MWD or Surface Read Gyro tools.",
       brandLogo: wildcatLogo,
